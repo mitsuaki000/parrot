@@ -1,0 +1,333 @@
+*{margin:0;padding:0}
+div,h1,h2,h3,p,ul,li,input,textarea,table,tr,th,td,footer,header,nav{box-sizing:border-box}
+input,textarea,select{font-family:inherit;font-size:inherit;color:inherit}
+a{text-decoration:none}
+a img{border-style:none}
+ul,li{list-style-type:none}
+
+html,body{
+height:100%
+}
+html{
+font-size:62.5%
+}
+body{
+background:#000;/* 背景 */
+color:#fff;/* 文字色 */
+font-size:1.2em;/* 文字の大きさ */
+font-family:Verdana,Roboto,'游ゴシック','Yu Gothic','游ゴシック体','YuGothic','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+height:100%;
+letter-spacing:.1em;
+line-height:1.5;
+text-align:center;
+overflow-y:scroll;
+overflow-wrap:break-word;
+word-wrap:break-word
+}
+a{
+color:#696969;
+text-decoration:underline
+}
+a:hover{
+background:rgba(0,0,0,.8);
+color:#fff
+}
+/*--------------------------------------------------------
+基本
+--------------------------------------------------------*/
+#wrapper{
+  background:#fff;
+  color:#000;
+  height:100%;
+  height:auto!important;
+  margin:0 auto;
+  min-height:100%;
+  position:relative;
+  width:600px /* 大きさはここを変更 */
+}
+/*--------------------------------------------------------
+上(ヘッダー)
+--------------------------------------------------------*/
+header{
+background:url(image/back01.gif);
+border-bottom:1px solid #000;
+color:#fff
+}
+header a{
+color:#fff
+}
+.header-inner{
+min-height:80px;
+padding:10px;
+text-align:left
+}
+/*--------------------------------------------------------
+メニュー
+--------------------------------------------------------*/
+#menu{
+background:#000;
+line-height:1;
+width:100%;
+text-align:center
+}
+nav li{
+display:inline-block; /* 横並び */
+position:relative; /* サブメニュー表示位置の基準 */
+height:2em;line-height:2em; /* メニュー高さ */
+}
+nav li a,nav li span{
+color:#fff;
+display:block;
+padding:0 5px;
+text-decoration:none
+}
+nav li a:hover,nav li span:hover{
+background:rgba(255,255,255,.6);
+transition:.6s
+}
+/* サブメニュー */
+.sub-menu{
+background:rgba(0,0,0,.8);
+position:absolute;
+width:180px; /* サブメニュー幅 */
+z-index:20
+}
+.sub-menu li{
+display:block; /* 横並びをリセット */
+visibility:hidden; /* 隠す */
+overflow:hidden; /* 隠す */
+height:0; /* 隠す */
+width:100%
+}
+nav li:hover .sub-menu li{
+visibility:visible;
+overflow:visible;
+height:3em;line-height:3em; /* サブメニュー高さ */
+transition: .5s
+}
+#open{display:none}
+/*--------------------------------------------------------
+メイン
+--------------------------------------------------------*/
+#contents{
+padding:20px 20px 100px; /* 最後はfooterの高さ+20 */
+text-align:center;
+}
+/*--------------------------------------------------------
+下(フッター)
+--------------------------------------------------------*/
+footer{
+background:url(image/back01.gif);
+;color:#fff;
+bottom:0;
+height:80px;
+position:absolute;
+text-align:right;
+width:100%
+}
+.footer-inner{
+background:#000;
+padding:5px 10px
+}
+footer a{
+color:#fff
+}
+/*--------------------------------------------------------
+ページ上部へのリンク、著作権表示
+--------------------------------------------------------*/
+#pagetop {/* 位置はscroll.jsで設定 */
+background:rgba(218,218,218,.8);/* 背景 */
+color:#000;/* 色 */
+border-radius:10px;
+display:block;
+padding:10px;
+position:fixed;
+text-align:center;
+text-decoration:none;
+z-index:10
+}
+#pagetop:hover {
+background:rgba(0,0,0,.8)
+}
+#fl a{
+display:inline-block;
+margin:10px
+}
+/*--------------------------------------------------------
+見出し、枠、線
+--------------------------------------------------------*/
+h1{
+color:#fff;
+font-size:1.3em;
+padding:0 0 10px
+}
+h2{
+border-bottom:1px solid;
+font-size:1.3em;
+margin:1em 0;
+text-shadow:0 1px 2px #000
+}
+h3{
+background:#000;
+border-radius:6px;
+color:#fff;
+font-size:1em;
+margin:10px 0 20px;
+padding:5px;
+position:relative
+}
+h3::after{
+border:8px solid transparent;
+border-top:8px solid #000;
+content:'';
+height:0;
+left:30px;
+position:absolute;
+top:100%;
+width:0
+}
+dd{
+margin:0 0 5px 2em
+}
+dt{
+font-weight:700;
+margin:0 0 5px
+}
+em{
+font-weight:700
+}
+input,textarea{
+background:#fff;
+border:1px solid;
+color:#000;
+margin:3px 0;
+width:200px
+}
+textarea{
+height:50px
+}
+hr{
+display:block;
+border:0;  
+border-top:1px solid #ccc;
+margin:1em 0;
+padding:0;
+height:1px
+}
+.marker{
+background:#d3cbfe
+}
+.dcline{
+border-left:3px solid;
+margin:5px 0;
+padding:3px
+}
+.textbox{
+border:2px solid;
+margin:10px 0;
+padding:3px;
+text-align:center
+}
+.title{
+font-size:1.5em;
+font-weight:700;
+margin:2em 0;
+text-align:right
+}
+.txt{
+border-left:1px dotted;
+margin:1em;
+padding:0 0 0 1em
+}
+.frame{
+background:#000;
+border-radius:3px;
+padding:6px
+}
+/*--------------------------------------------------------
+スマホ、タブレット用
+横幅600pxで切り替え
+--------------------------------------------------------*/
+@media screen and (max-width: 600px){
+body{
+font-size:1.4em
+}
+#wrapper{
+width:100%
+}
+/* 画像の縮小表示 */
+img{
+max-width:100%;
+height:auto
+}
+/*--------------------------------------------------------
+スマホ、タブレット用メニュー
+--------------------------------------------------------*/
+/* メニュー */
+#menu{
+background:rgba(0,0,0,.9); /* メニューの背景色 */
+text-align:left;
+display:none;
+position:absolute; /* 表示位置固定 */
+left:0;
+z-index:20
+}
+nav li{
+display:block; /* 横並び解除 */
+height:auto;line-height:inherit /* 高さリセット */
+}
+nav li a,nav li span{
+position:relative;
+padding:15px 20px /* リンクの余白 一列の高さはここで調節 */
+}
+/* サブメニュー */
+.sub-menu{
+background:none;
+position:static;
+display:none; /* 隠す */
+width:100%;
+z-index:auto
+}
+.sub-menu li{
+text-indent:1em;
+display:inline-block;/* 一列ごとにするならここを削除 */
+visibility:visible; /* リセット */
+overflow:visible; /* リセット */
+height:auto; /* 高さリセット */
+width:50% /* 一列ごとにするならここを削除 */
+}
+.sub-menu li a:after{
+display:none
+}
+nav li:hover .sub-menu li{
+height:auto;line-height:inherit /* 高さリセット */
+}
+nav li span:after{
+border-top:3px solid #fff; /* メニュー「>」の色 */
+border-right:3px solid #fff; /* メニュー「>」の色 */
+content:"";
+display:block;
+margin-top:-5px;
+position:absolute;
+top:50%;right:20px;
+height:5px;width:5px;
+-ms-transform:rotate(45deg);
+-webkit-transform:rotate(45deg);
+transform:rotate(45deg);
+transition:.5s
+}
+nav li span.open:after {
+-ms-transform:rotate(135deg);
+-webkit-transform:rotate(135deg);
+transform:rotate(135deg)
+}
+/* メニューを開くボタン */
+#open {
+background:#000;
+color:#fff;
+display:block;
+padding:.5em
+}
+
+
+}
